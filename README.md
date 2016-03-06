@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Riot Starterkit
 
 With this starterkit we want to provide **a simple foundation for Riot applications**. We are using the riot router and a flux inspired event controller called RiotControl.<br />
@@ -46,6 +47,5 @@ Now the server is runnning on localhost:1337
 $ npm run build
 ```
 
-
-
 Thanks to https://github.com/txchen/feplay/tree/gh-pages/riot_webpack for a lot of concepts on how to structure the app.
+
