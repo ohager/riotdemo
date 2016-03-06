@@ -6,6 +6,7 @@
   </ul>
 
   <script>
+
     this.items = [];
 
     this.on('mount', () => {
@@ -14,7 +15,7 @@
 
     riot.control.on(riot.EVT.loadItemsSuccess, items => {
       this.items = items;
-      this.update()
+      this.update();
     });
   </script>
 </itemlist>
