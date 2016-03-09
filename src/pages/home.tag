@@ -1,9 +1,7 @@
-import '../components/header.tag';
-import '../components/itemlist.tag';
+import '../components/basepage.tag';
 
 <home>
-  <header></header>
-  <div class="content">
-    <itemlist title="Item List ABC"></itemlist>
-  </div>
+    <basepage>
+        <h2 class="heading heading--xlarge">Blaze&Riot working together</h2>
+    </basepage>
 </home>

@@ -1,5 +1,6 @@
 import './pages/home.tag'
 import './pages/projects.tag'
+import './pages/demo.tag'
 
 // we need this to easily check the current route from every component 
 riot.routeState = {
@@ -10,8 +11,8 @@ class Router{
 
   constructor(){
     this._currentView = null;
-    this._views = ['home', 'projects'];
-    this._defaultView = 'home';
+    this._views = ['home', 'projects', 'demo'];
+    this._defaultView = 'demo';
     
     riot.route(this._handleRoute.bind(this));
     riot.route.exec(this._handleRoute.bind(this));
