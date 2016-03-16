@@ -1,5 +1,5 @@
 <itemlist>
-  <h3>{ opts.title }</h3>
+<h3>{ opts.title }</h3>
 
   <ul>
     <li each={ items } >{ this.name }</li>

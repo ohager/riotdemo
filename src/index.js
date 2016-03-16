@@ -3,6 +3,11 @@
 import '../node_modules/blaze/dist/blaze.min.css'
 import '../node_modules/font-awesome/css/font-awesome.css'
 
+
 import './event-helper';
 import './stores/itemstore';
+
+import './fluxconfig.js';
 import './router.js';
+
+

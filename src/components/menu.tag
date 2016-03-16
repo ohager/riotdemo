@@ -1,3 +1,4 @@
+
 <menu class="left-side-menu" >
 
     <div class="drawer drawer--left {drawer--visible : menuOpen}">
@@ -26,15 +27,12 @@
     this.navItems = [
       { title : 'Home', view : 'home'},
       { title : 'Demo', view : 'demo'},
+      { title : 'Shop', view : 'shop'},
       { title : 'Projects', view : 'projects' }
     ];
 
     this.route = (evt) => {
       riot.route(evt.item.view)
-    };
-
-    this.toggleMenu = (evt) => {
-        console.log("Hahaha");
     };
   </script>
 </menu>

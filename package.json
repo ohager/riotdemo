@@ -15,6 +15,7 @@
   "dependencies": {
     "blaze": "^1.1.3",
     "font-awesome": "^4.5.0",
+    "lazy.js": "^0.4.2",
     "nanoflux": "^1.0.4",
     "normalize.css": "^3.0.3",
     "npm-run-all": "^1.3.2",
