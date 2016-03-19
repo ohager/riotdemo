@@ -1,33 +1,46 @@
 import '../components/basepage.tag';
+import '../components/shopmenu.tag';
 import '../components/productlist.tag';
 import '../components/cart.tag';
-import NanoFlux from '../../node_modules/nanoflux/dist/nanoflux';
 
 <shop>
     <basepage>
         <div class="grid">
-            <div class="grid__cell grid__cell--width-80">
-                <productlist title="Products" products={parent.products}></productlist>
+            <div class="grid__cell grid__cell">
+                <shopmenu/>
             </div>
-            <div class="grid__cell grid__cell--width-20">
-                <cart products="{parent.products}"></cart>
+        </div>
+        <div class="grid">
+            <div class="grid__cell grid__cell--width-70">
+                <productlist products={parent.products}></productlist>
+            </div>
+            <div class="grid__cell grid__cell">
+                <cart products="{parent.productsInCart}"></cart>
             </div>
         </div>
     </basepage>
 
+
+    <style scoped>
+        cart {
+            margin: 1em;
+        }
+    </style>
+
     <script>
         this.shopActions = NanoFlux.getActions('shopActions');
         this.products = [];
-        this.addedProducts = [];
+        this.productsInCart = [];
 
-        this.onProductsLoaded = ()=>{
+        this.onShopUpdated = ()=>{
             this.products = this._shopStore.getProducts();
+            this.productsInCart = this._shopStore.getProductsInCart();
             this.update();
         }
 
         this.on('mount', ()=>{
             this._shopStore = NanoFlux.getStore('shopStore');
-            this._subscription = this._shopStore.subscribe(this, this.onProductsLoaded);
+            this._subscription = this._shopStore.subscribe(this, this.onShopUpdated);
             this.shopActions.loadProducts();
         });
 

@@ -1,5 +1,5 @@
 <cartitem>
-    <div class="card card--high">
+    <div class="card card">
         <div class="card__item">
             <p class="paragraph">{opts.product.name}</p>
             <p class="paragraph">

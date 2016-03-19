@@ -1,13 +1,8 @@
+import shopService from '../services/shopservice';
+
 export default {
 	_products : [],
-
-	__findProductById: function(id){
-		var products = this._products;
-		for(var i=0; i<products.length;++i){
-			if(products[i].id===id) return i;
-		}
-		return undefined;
-	},
+	_orders : [],
 
 	getProducts : function(){
 		return this._products.filter( (p)=>{
@@ -21,16 +16,34 @@ export default {
 		});
 	},
 
-	onLoadProducts : function(products){
-		this._products = products;
-		this.notify();
+	onLoadProducts : function(){
+		shopService.loadProducts().then( (products) => {
+			this._products = products;
+			this.notify();
+		});
+	},
+
+	onLoadOrders : function(){
+
+		shopService.loadOrders().then( (orders) => {
+			this._orders = orders;
+			this.notify();
+		});
 	},
 
 	onAddProductToCart : function(productId){
-		var index = this.__findProductById(productId);
-		if(index===undefined) return;
+		var product = _.findWhere(this._products, {id:productId});
+		if(!product) return;
 
-		this._products[index].cart++;
+		product.cart++;
 		this.notify();
+	},
+
+	onCreateOrder : function(){
+		var orderedProducts = this.getProductsInCart();
+		shopService.createOrder(orderedProducts).then( ()=> {
+			this.onLoadOrders();
+			this.onLoadProducts();
+		});
 	}
 };

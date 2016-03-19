@@ -25,10 +25,10 @@
     this.menuOpen = true;
 
     this.navItems = [
-      { title : 'Home', view : 'home'},
-      { title : 'Demo', view : 'demo'},
-      { title : 'Shop', view : 'shop'},
-      { title : 'Projects', view : 'projects' }
+      //{ title : 'Home', view : 'home'},
+      //{ title : 'Demo', view : 'demo'},
+      { title : 'Shop Demo', view : 'shop'},
+      //{ title : 'Projects', view : 'projects' }
     ];
 
     this.route = (evt) => {

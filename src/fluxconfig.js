@@ -7,6 +7,9 @@ var dispatcher = NanoFlux.createDispatcher('dispatcher');
 NanoFlux.createActions('shopActions', dispatcher, shopActions);
 dispatcher.connectTo( NanoFlux.createStore('shopStore', shopStore) );
 
+// set global
+window.NanoFlux = NanoFlux;
+
 
 
 
