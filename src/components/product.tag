@@ -3,15 +3,14 @@
         <div class="card__content card__content--divider heading">{opts.product.name}</div>
         <div class="card__item">
             <div class="card__item">
-            <div class="grid">
-                <div class="grid__cell grid__cell--width-20">
-                    <img class="image" src={opts.product.img}>
+                <div class="grid">
+                    <div class="grid__cell grid__cell--width-20">
+                        <img class="image" src={opts.product.img}>
+                    </div>
+                    <div class="grid__cell grid__cell">
+                        <p class="paragraph description">{opts.product.description}</p>
+                    </div>
                 </div>
-                <div class="grid__cell grid__cell">
-                    <p class="paragraph">{opts.product.description}</p>
-                </div>
-            </div>
-
             </div>
             <div class="card__item">
                 <div class="grid">
@@ -32,6 +31,11 @@
         <style scoped>
             .center {
                 text-align: center;
+            }
+            .description {
+                max-height: 200px;
+                text-overflow: ellipsis;
+                overflow-y: auto;
             }
         </style>
 

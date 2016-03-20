@@ -20,7 +20,7 @@ import './cartitem.tag'
                     <b class="total">Total: $ {total}</b>
                 </div>
                 <div class="grid__cell center">
-                    <button if={hasProducts()} class="button button--secondary" onclick={buy}>Buy</button>
+                    <button if={hasProducts() && !hasBought} class="button button--secondary" onclick={buy}>Buy</button>
                 </div>
             </div>
         </div>

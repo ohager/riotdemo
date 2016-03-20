@@ -4,6 +4,10 @@ export default {
 	_products : [],
 	_orders : [],
 
+	getOrders : function(){
+		return this._orders.slice(); // immutable
+	},
+
 	getProducts : function(){
 		return this._products.filter( (p)=>{
 			return p.stock > 0;

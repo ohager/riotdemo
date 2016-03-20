@@ -1,22 +1,37 @@
+import '../components/container/ordercontainer.tag';
 
 <shopmenu>
 
-    <p>TODO MENU</p>
+    <ul class="horizontal-menu">
+        <li each="{menuItems}" onclick="{parent.route}">{this.title}</li>
+    </ul>
+
+    <style scoped>
+        .horizontal-menu {
+            border-bottom: solid 1px #aaa;
+            padding: 0.1em;
+        }
+
+        .horizontal-menu > li {
+            display: inline-block;
+            padding: 0.1em 0.5em;
+        }
+
+        li:hover{
+            background-color: #eee;
+        }
+    </style>
 
     <script>
 
-    this.currentView = riot.routeState.view;
-    this.menuOpen = true;
+        this.menuItems = [
+            {title: "Shop", view: "productcontainer"},
+            {title: "My Orders", view: "ordercontainer"},
+        ];
 
-    this.navItems = [
-      //{ title : 'Home', view : 'home'},
-      //{ title : 'Demo', view : 'demo'},
-      { title : 'Shop Demo', view : 'shop'},
-      //{ title : 'Projects', view : 'projects' }
-    ];
+        this.route = (evt) => {
+            riot.mount(opts.mountto, evt.item.view);
+        };
 
-    this.route = (evt) => {
-      riot.route(evt.item.view)
-    };
-  </script>
+    </script>
 </shopmenu>
