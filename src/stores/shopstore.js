@@ -5,7 +5,8 @@ export default {
 	_orders : [],
 
 	getOrders : function(){
-		return this._orders.slice(); // immutable
+		// TODO: use true immutable
+		return this._orders.slice(); // shallow copy
 	},
 
 	getProducts : function(){
